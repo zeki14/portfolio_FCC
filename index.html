@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal_Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
     <link
   href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap"
@@ -14,29 +15,30 @@
   href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap"
   rel="stylesheet"
 />
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
     <header>
         <nav id="navbar">
             <ul class="navbar-list"> 
                 <li class="anchor">
-                    <a href="">About</a>
+                    <a href="#introduction">About</a>
                 </li>
                 <li class="anchor">
-                    <a href="">Work</a>
+                    <a href="#projects">Work</a>
                 </li>
                 <li class="anchor">
-                    <a href="">Contact</a>
+                    <a href="#contact_links">Contact</a>
                 </li>
             </ul>
         </nav>
-        <section class="welcome-section">
-            <h1 class="name">Hey, I am Zeki</h1>
+        <section id="welcome-section" class="welcome-section">
+            <h1 >Hey, I am Zeki</h1>
             <p class="subtitle"> a junior web developer </p>
-            <p class="subtitle"> passionated about <span class="word_other_color">JavaScript</span>  in all its enviroments: </p>
-            <p class="subtitle">building frontend application joined with <span class="word_other_color">Html5</span>  and <span class="word_other_color">Css3</span> and, in a more complex way, using JS frameworks like  <span class="word_other_color">VueJs</span> or <span class="word_other_color">React</span> </p>
+            <p class="subtitle"> passionate about <span class="word_other_color">JavaScript</span>  and all its enviroments: </p>
+            <p class="subtitle">building frontend application together with <span class="word_other_color">Html</span>  and <span class="word_other_color">Css</span> and using JS frameworks like  <span class="word_other_color">VueJs</span> or <span class="word_other_color">React</span> </p>
             <p class="subtitle">&&</p>
-            <p class="subtitle">using in the backend with <span class="word_other_color">NodeJs</span> and <span class="word_other_color">Express</span> together</p>
+            <p class="subtitle"> in the backend with <span class="word_other_color">NodeJs</span> and <span class="word_other_color">Express</span> together</p>
             <p class="subtitle">be always welcome to visit my portfolio</p>
         </section>
     </header>
@@ -48,7 +50,7 @@
            
                     <a href="https://codepen.io/LzekiL/pen/QWgXWvR" 
                      target="blank"
-                     class="project">
+                     class="project-tile">
                          <img 
                          class="project-image" 
                          src="./img/survey_form.jpg" 
@@ -60,8 +62,8 @@
                         </p>
                     </a>
                     <a href="https://codepen.io/LzekiL/pen/wvebdxj" 
-                     target="blank"
-                     class="project">
+                     target="_blank"
+                     class="project-tile">
                          <img 
                          class="project-image" 
                          src="./img/tribute_page.jpg" 
@@ -73,8 +75,8 @@
                         </p>
                     </a>
                     <a href="https://codepen.io/LzekiL/pen/bGrdGGE" 
-                     target="blank"
-                     class="project">
+                     target="_blank"
+                     class="project-tile">
                          <img 
                          class="project-image" 
                          src="./img/landing.jpg" 
@@ -86,8 +88,8 @@
                         </p>
                     </a>
                     <a href="https://codepen.io/LzekiL/pen/porNyMK" 
-                     target="blank"
-                     class="project">
+                     target="_blank"
+                     class="project-tile">
                          <img 
                          class="project-image" 
                          src="./img/technical.jpg" 
@@ -104,16 +106,17 @@
        </section> 
     </main>
     <footer id="contact_links">
-        <h2></h2>
-        <ul>
+        <h2>Any suggestion? Let´s work together!</h2>
+        <p class="subtitle">How do you preffer your coffe? <br>👨‍💻☕🙂</p>
+        <ul class="footer_container">
             <li>
-                <a href="">Freecodecamp</a>
+                <a class="links" target="_blank" href="https://www.linkedin.com/in/ezequiel-gonzalez-rodriguez/"><i class="fab fa-linkedin"></i> Linkedin</a>
             </li>
             <li>
-                <a href="">GitHub</a>
+                <a id="profile-link" class="links" target="_blank" href="https://github.com/zeki14"><i class="fab fa-github"></i> GitHub</a>
             </li>
             <li>
-                <a href="">Linkedin</a>
+                <a class="links" target="_blank" href="https://m.facebook.com/profile.php"><i class="fab fa-facebook"></i> Facebook</a>
             </li>
         </ul>
     </footer>

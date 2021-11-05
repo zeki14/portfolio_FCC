@@ -1,184 +1,238 @@
 /* Custom properties/variables  */
 :root {
-    --main-white: #f0f0f0;
-    --main-red: #be3144;
-    --main-blue: #45567d;
-    --main-gray: #303841;
-  }
+  --main-white: #f0f0f0;
+  --main-red: #be3144;
+  --main-blue: #45567d;
+  --main-gray: #303841;
+}
 
 /* Base reset */
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* box-sizing and font sizing */
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-  
+  margin: 0;
+  padding: 0;
+}
+
+/* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+
+  /* Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+/* A few media query to set some font sizes at different screen sizes.
+ * This helps automate a bit of responsiveness.
+ * The trick is to use the rem unit for size values, margin and padding.
+ * Because rem is relative to the document font size
+ * when we scale up or down the font size on the document
+ * it will affect all properties using rem units for the values.
+*/
+
+/* I am using the em unit for breakpoints
+ * The calculation is the following
+ * screen size divided by browser base font size
+ * As an example: a breakpoint at 980px
+ * 980px / 16px = 61.25em
+*/
+
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
   html {
-    box-sizing: border-box;
-  
-    /* Set font size for easy rem calculations
-     * default document font size = 16px, 1rem = 16px, 100% = 16px
-     * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
-    */
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+    font-size: 60%;
   }
-  
-  /* A few media query to set some font sizes at different screen sizes.
-   * This helps automate a bit of responsiveness.
-   * The trick is to use the rem unit for size values, margin and padding.
-   * Because rem is relative to the document font size
-   * when we scale up or down the font size on the document
-   * it will affect all properties using rem units for the values.
-  */
-  
-  /* I am using the em unit for breakpoints
-   * The calculation is the following
-   * screen size divided by browser base font size
-   * As an example: a breakpoint at 980px
-   * 980px / 16px = 61.25em
-  */
-  
-  /* 1200px / 16px = 75em */
-  @media (max-width: 75em) {
-    html {
-      font-size: 60%;
-    }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  html {
+    font-size: 58%;
   }
-  
-  /* 980px / 16px = 61.25em */
-  @media (max-width: 61.25em) {
-    html {
-      font-size: 58%;
-    }
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+  html {
+    font-size: 55%;
   }
-  
-  /* 460px / 16px = 28.75em */
-  @media (max-width: 28.75em) {
-    html {
-      font-size: 55%;
-    }
-  }
-  
+}
+
 /* Base styles */
 
 body{
-    font-family: 'Poppins', sans-serif; 
-    font-size: 1.8rem;/* 18px*/
-    line-height: 1.5em;
-    color: var(--main-white);
-    font-weight: 400;
+  font-family: 'Poppins', sans-serif; 
+  font-size: 1.8rem;/* 18px*/
+  line-height: 1.5em;
+  color: var(--main-white);
+  font-weight: 400;
 }
 a{
-    text-decoration: none;
-    color:var(--main-white);
+  text-decoration: none;
+  color:var(--main-white);
 }
 h1{
-    font-size: 1.8em;
-    font-family: 600;
-    margin:0 0 10px 0;
+  font-size: 4em;
+  font-weight: 700;
+  margin:1.5em 0 5rem 0;
+  font-family: 'Raleway', sans-serif;
 }
-#navbar{
-    position:fixed;
-    top:0;
-    left: 0;
-    /* position:sticky;
-    top:0; */
-    background-color:var(--main-red);
-    width: 100vw;
-    height: 12vh;
-    display: flex;
-    justify-content: end;
-    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+@media (max-width: 520px) {
+h1 {
+  font-size: 3em;
+  line-height: 1em;
 }
-.navbar-list{
-    display:flex;
-    align-self: center;
-    list-style:none;
 }
-.anchor{
-    margin: 0 2em;
+h2{
+font-size: 3em;
+font-weight: 600;
+margin:1em 0 3rem 0;
+font-family: 'Raleway', sans-serif;
+line-height: 1.2em;
 }
 
-.welcome-section{
-    height: 100vh;
-    background-color: var(--main-gray);
-    text-align: center;
-    padding: 10em;
+@media (max-width: 520px) {
+h2 {
+  font-size: 2em;
+  line-height: 1em;
+}
+}
+#navbar{
+  position:fixed;
+  top:0;
+  left: 0;
+  /* position:sticky;
+  top:0; */
+  background-color:var(--main-red);
+  width: 100vw;
+  height: 12vh;
+  display: flex;
+  justify-content: end;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+}
+.navbar-list{
+  display:flex;
+  align-self: center;
+  list-style:none;
+}
+.anchor{
+  margin: 0 2em;
+}
+
+#welcome-section{
+  height: 100vh;
+  background-color: var(--main-gray);
+  text-align: center;
+  padding: 2em;
 }
 .subtitle{
-    color:var(--main-red);
-    line-height: 2em;
-    font-size: 1.2em;
+  color:var(--main-red);
+  line-height: 2em;
+  font-size: 1.3em;
+}
+@media (max-width: 520px) {
+.subtitle{
+  font-size: 1em;
+}
 }
 .word_other_color{
-    color:var(--main-white);
+  color:var(--main-white);
 }
 #projects{
-    background-color: var(--main-blue);
-    text-align: center;
-    padding:2em;
+  background-color: var(--main-blue);
+  text-align: center;
+  padding:2em;
 
 }
 .intro_projects{
-    margin-bottom: 0.5em;
-    text-decoration: underline;
-    text-underline-offset: 0.3em;
-    
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+  
 }
 .subtitleGray{
-  color:var(--main-gray);
-  line-height: 2em;
-  font-size: 1.2em;
-  margin-bottom: 1.5em;
+color:var(--main-gray);
+line-height: 2em;
+font-size: 1.2em;
+margin-bottom: 1.5em;
 }
 .grid-container{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 4rem;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  margin-bottom: 6rem;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+grid-gap: 4rem;
+width: 100%;
+max-width: 1280px;
+margin: 0 auto;
+margin-bottom: 6rem;
 }
 
-.project{
-  background-color: var(--main-gray);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  border-radius: 2px;
+.project-tile{
+background-color: var(--main-gray);
+box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+border-radius: 2px;
 
 }
 
 
 .project-image {
-  height: calc(100% - 5rem);
-  width: 100%;
-  object-fit: cover;
+height: calc(100% - 5rem);
+width: 100%;
+object-fit: cover;
 }
 
 .code {
-  /*put the color of the symbols same as backgroun, so it looks like no symbols*/
-  color: var(--main-gray);
-  transition: color 0.3s ease-out;
+/*put the color of the symbols same as backgroun, so it looks like no symbols*/
+color: var(--main-gray);
+transition: color 0.3s ease-out;
 }
 
 .project:hover .code {
-  color: #ff7f50;
+color: #ff7f50;
 }
 .project-title{
-  font-size: 2rem;
+font-size: 2rem;
 
 }
-
-
-
-
 #contact_links{
-    background-color: var(--main-gray);
+  background-color: var(--main-gray);
+  text-align: center;
+  padding:2em;
+}
+.footer_container{
+padding: 1.5em 0 0.5em 0;
+display: flex;
+justify-content: space-around;
+list-style: none;
+flex-wrap: wrap;
+
+  
+}
+@media (max-width: 520px) {
+.footer_container {
+  flex-direction: column;
+  align-self: center;
+  line-height: 2em;
+  }
+  li{
+    font-size: 1em;
+  }
+}
+
+.links{
+
+font-size: 1.6em;
+}
+@media (max-width: 520px) {
+.links{
+  font-size: 1.2em;
+}
 }
